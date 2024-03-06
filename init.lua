@@ -744,17 +744,14 @@ require('lazy').setup {
   },
 
   -- Highlight todo, notes, etc in comments
-  --[[
   {
     'folke/todo-comments.nvim',
     event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    --opts = {
-    --  signs = false,
-    --},
+    opts = {
+      signs = false,
+    },
   },
-  ]]
-  --
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
@@ -801,7 +798,7 @@ require('lazy').setup {
 
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
+        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'comment' },
         -- Autoinstall languages that are not installed
         auto_install = true,
         highlight = { enable = true },
