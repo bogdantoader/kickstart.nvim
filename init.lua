@@ -733,7 +733,7 @@ require('lazy').setup {
       -- vim.cmd.colorscheme 'tokyonight-night'
 
       -- gruvbox-material settings
-      vim.g.gruvbox_material_foreground = 'material' -- can be 'original', 'material' or 'mix'
+      vim.g.gruvbox_material_foreground = 'original' -- can be 'original', 'material' or 'mix'
       vim.g.gruvbox_material_background = 'medium' -- can be 'hard', 'medium' or 'soft'
       vim.g.gruvbox_material_better_performance = 1
       vim.cmd.colorscheme 'gruvbox-material'
