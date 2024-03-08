@@ -750,6 +750,15 @@ require('lazy').setup {
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       signs = false,
+      colors = {
+        -- TODO: For some reason changing these doesn't change anything, so something's wrong with this plugin, it doesn't seem to have any effect
+        error = { 'DiagnosticError', 'ErrorMsg', '#DC2626' },
+        warning = { 'DiagnosticWarn', 'WarningMsg', '#FBBF24' },
+        info = { 'DiagnosticInfo', '#0E21ED' }, --color of TODO
+        hint = { 'DiagnosticHint', '#10B981' }, --color of NOTE
+        default = { 'Identifier', '#7C3AED' },
+        test = { 'Identifier', '#FF00FF' },
+      },
     },
   },
 
