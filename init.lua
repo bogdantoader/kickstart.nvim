@@ -148,6 +148,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Enable 24-bit colour
+vim.opt.termguicolors = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -183,6 +186,9 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Open/close NvimTree
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { desc = ':NvimTreeToggle' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -751,10 +757,10 @@ require('lazy').setup {
     opts = {
       signs = false,
       colors = {
-        -- TODO: For some reason changing these doesn't change anything, so something's wrong with this plugin, it doesn't seem to have any effect
+        -- These are the defaults, but they require vim.opt.termguicolors = true
         error = { 'DiagnosticError', 'ErrorMsg', '#DC2626' },
         warning = { 'DiagnosticWarn', 'WarningMsg', '#FBBF24' },
-        info = { 'DiagnosticInfo', '#0E21ED' }, --color of TODO
+        info = { 'DiagnosticInfo', '#2563EB' }, --color of TODO
         hint = { 'DiagnosticHint', '#10B981' }, --color of NOTE
         default = { 'Identifier', '#7C3AED' },
         test = { 'Identifier', '#FF00FF' },
@@ -807,7 +813,7 @@ require('lazy').setup {
 
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'comment' },
+        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'comment', 'latex' },
         -- Autoinstall languages that are not installed
         auto_install = true,
         highlight = { enable = true },
@@ -841,6 +847,44 @@ require('lazy').setup {
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   -- { import = 'custom.plugins' },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+
+    config = function()
+      -- Empty setup using defaults
+      require("nvim-tree").setup()
+
+      -- OR Custom setup with some options
+      --[[ require("nvim-tree").setup {
+        sort = {
+          sorter = "case_sensitive",
+        },
+        view = {
+          width = 30,
+        },
+        renderer = {
+          group_empty = true,
+        },
+        filters = {
+          dotfiles = true,
+        },
+      } ]]
+
+    end,
+  },
+
+  {
+    "lervag/vimtex",
+    lazy = false,     -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here
+      view_method = 'skim'
+      vim.g.vimtex_view_method = 'skim'
+    end
+  }
+
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
