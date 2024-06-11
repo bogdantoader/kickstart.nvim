@@ -325,7 +325,6 @@ require('lazy').setup {
       --  If you already have a Nerd Font, or terminal set up with fallback fonts
       --  you can enable this
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -870,11 +869,11 @@ require('lazy').setup {
   -- { import = 'custom.plugins' },
 
   {
-    "nvim-tree/nvim-tree.lua",
+    'nvim-tree/nvim-tree.lua',
 
     config = function()
       -- Empty setup using defaults
-      require("nvim-tree").setup()
+      require('nvim-tree').setup()
 
       -- OR Custom setup with some options
       --[[ require("nvim-tree").setup {
@@ -891,21 +890,23 @@ require('lazy').setup {
           dotfiles = true,
         },
       } ]]
-
     end,
   },
 
   {
-    "lervag/vimtex",
-    lazy = false,     -- we don't want to lazy load VimTeX
+    'lervag/vimtex',
+    lazy = false, -- we don't want to lazy load VimTeX
     -- tag = "v2.15", -- uncomment to pin to a specific release
     init = function()
       -- VimTeX configuration goes here
       view_method = 'skim'
       vim.g.vimtex_view_method = 'skim'
-    end
-  }
+    end,
+  },
 
+  {
+    'github/copilot.vim',
+  },
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
