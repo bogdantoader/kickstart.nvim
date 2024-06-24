@@ -739,6 +739,7 @@ require('lazy').setup {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'vimtex' },
         },
       }
     end,
@@ -891,6 +892,11 @@ require('lazy').setup {
         },
       } ]]
     end,
+  },
+
+  -- Autocomplete for LaTex: nvim-cmp + vimtex
+  {
+    'micangl/cmp-vimtex',
   },
 
   {
