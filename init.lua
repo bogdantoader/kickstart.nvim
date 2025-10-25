@@ -1017,7 +1017,7 @@ require('lazy').setup {
       require('codecompanion').setup {
         display = {
           diff = {
-            provider = 'mini_diff',
+            provider = 'default', -- 'mini_diff',
           },
         },
         -- opts = {
