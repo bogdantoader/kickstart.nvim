@@ -207,6 +207,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- [[ Auto-reload files changed externally (e.g., by Claude Code) ]]
+-- Enable autoread so checktime actually reloads the buffer
+vim.opt.autoread = true
+-- Watch current working directory for file changes
+require('custom.directory-watcher').setup { path = vim.fn.getcwd() }
+-- Set up hotreload autocmds
+require('custom.hotreload').setup()
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
