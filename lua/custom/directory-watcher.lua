@@ -94,7 +94,7 @@ M.setup = function(opts)
 
   -- Start watching (recursive = false, only watches immediate directory)
   -- vim.schedule_wrap ensures callbacks run in the main Neovim thread
-  local ok, err = fs_event:start(path, { recursive = false }, vim.schedule_wrap(on_change))
+  local ok, err = fs_event:start(path, { recursive = true }, vim.schedule_wrap(on_change))
 
   if ok ~= 0 then
     return false
