@@ -641,7 +641,7 @@ require('lazy').setup {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
-        'ruff',   -- Used for Python linting and formatting
+        'ruff', -- Used for Python linting and formatting
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -956,9 +956,9 @@ require('lazy').setup {
     end,
   },
 
-  {
-    'github/copilot.vim',
-  },
+  -- {
+  --   'github/copilot.vim',
+  -- },
 
   {
     'goolord/alpha-nvim',
@@ -1018,7 +1018,7 @@ require('lazy').setup {
       'nvim-treesitter/nvim-treesitter',
       'hrsh7th/nvim-cmp', -- Optional: For using slash commands and variables in the chat buffer
       'nvim-telescope/telescope.nvim', -- Optional: For using slash commands
-      { 'MeanderingProgrammer/render-markdown.nvim', ft = { 'markdown', 'codecompanion' } }, -- Optional: For prettier markdown rendering
+      { 'MeanderingProgrammer/render-markdown.nvim', ft = { 'markdown', 'codecompanion' }, opts = { html = { enabled = false } } }, -- Optional: For prettier markdown rendering
       { 'stevearc/dressing.nvim', opts = {} }, -- Optional: Improves `vim.ui.select`
     },
     -- config = true,
