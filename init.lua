@@ -351,6 +351,8 @@ require('lazy').setup {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
+      'BurntSushi/ripgrep',
+      'sharkdp/fd',
       { -- If encountering errors, see telescope-fzf-native README for install instructions
         'nvim-telescope/telescope-fzf-native.nvim',
 
@@ -807,7 +809,7 @@ require('lazy').setup {
 
       -- gruvbox-material settings
       vim.g.gruvbox_material_foreground = 'original' -- can be 'original', 'material' or 'mix'
-      vim.g.gruvbox_material_background = 'medium' -- can be 'hard', 'medium' or 'soft'
+      vim.g.gruvbox_material_background = 'hard' -- can be 'hard', 'medium' or 'soft'
       vim.g.gruvbox_material_better_performance = 1
       vim.cmd.colorscheme 'gruvbox-material'
 
