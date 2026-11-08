@@ -877,7 +877,7 @@ require('lazy').setup {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
-    build = ':TSUpdate'
+    build = ':TSUpdate',
   },
 
   -- { -- Highlight, edit, and navigate code
