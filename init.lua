@@ -351,6 +351,8 @@ require('lazy').setup {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
+      'BurntSushi/ripgrep',
+      'sharkdp/fd',
       { -- If encountering errors, see telescope-fzf-native README for install instructions
         'nvim-telescope/telescope-fzf-native.nvim',
 
@@ -641,7 +643,7 @@ require('lazy').setup {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
-        'ruff',   -- Used for Python linting and formatting
+        'ruff', -- Used for Python linting and formatting
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -807,7 +809,7 @@ require('lazy').setup {
 
       -- gruvbox-material settings
       vim.g.gruvbox_material_foreground = 'original' -- can be 'original', 'material' or 'mix'
-      vim.g.gruvbox_material_background = 'medium' -- can be 'hard', 'medium' or 'soft'
+      vim.g.gruvbox_material_background = 'hard' -- can be 'hard', 'medium' or 'soft'
       vim.g.gruvbox_material_better_performance = 1
       vim.cmd.colorscheme 'gruvbox-material'
 
@@ -954,10 +956,6 @@ require('lazy').setup {
       view_method = 'skim'
       vim.g.vimtex_view_method = 'skim'
     end,
-  },
-
-  {
-    'github/copilot.vim',
   },
 
   {
