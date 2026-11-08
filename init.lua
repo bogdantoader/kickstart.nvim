@@ -879,7 +879,7 @@ require('lazy').setup {
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
       ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup {
+      require('nvim-treesitter.config').setup {
         ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'comment', 'latex' },
         -- Autoinstall languages that are not installed
         auto_install = true,
@@ -953,6 +953,15 @@ require('lazy').setup {
       -- VimTeX configuration goes here
       view_method = 'skim'
       vim.g.vimtex_view_method = 'skim'
+    end,
+  },
+
+  {
+    'jedi-knights/yaml.nvim',
+    config = function()
+      require('yaml').setup {
+        indent_width = 2, -- default indentation width
+      }
     end,
   },
 
