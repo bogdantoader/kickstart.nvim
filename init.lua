@@ -1180,7 +1180,7 @@ require('lazy').setup {
 
       -- preview page title
       -- ${name} will be replace with the file name
-      vim.g.mkdp_page_title = '「${name}」'
+      vim.g.mkdp_page_title = '${name}'
 
       -- use a custom location for images
       vim.g.mkdp_images_path = '/home/user/.markdown_images'
